@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>#whatstheviberightnow</title>
+
+    <style>
+      html, body {
+        margin: 0;
+        height: 100%;
+      }
+      body {
+        /*background-color: linen;*/
+        background-image: url("background.gif");
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+      }
+
+      h1 {
+          color: #222222;
+          margin: 0 auto;
+          display: block;
+          text-align: center;
+      }
+      div, iframe, img {
+        margin: 0 auto;
+        display: block;
+      }
+      </style>
+
+      <script type="text/javascript">
+        window.onload = function() {
+          var showLoader = function() {
+            document.getElementById('loader').innerHTML = '<img src="loader.gif"/>';
+          };
+          var hideLoader = function() {
+            document.getElementById('loader').innerHTML = '';
+          };
+          showLoader();
+          document.getElementById('vibe').innerHTML = '<iframe id="spot" src="https://embed.spotify.com/?uri=spotify%3Atrack%3A6K4t31amVTZDgR3sKmwUJJ" width="300" height="380" frameborder="0" allowtransparency="true">Loading</iframe>';
+          document.getElementById('spot').onload = function() { hideLoader(); };
+        }
+      </script>
+  </head>
+  <body>
+    <h1>And the vibe is...</h1>
+    <div id="loader"></div>
+    <div id="vibe"></div>
+  </body>
+</html>
