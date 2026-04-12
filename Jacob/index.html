@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>#whatstheviberightnow</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Settings Toggle Button -->
+  <button id="settingsOpen" title="Settings">&#9881;</button>
+
+  <!-- Settings Panel -->
+  <aside id="settings">
+    <div class="settings-header">
+      <h2>Settings</h2>
+      <button id="settingsClose">&times;</button>
+    </div>
+
+    <label for="apiProvider">AI Provider</label>
+    <select id="apiProvider">
+      <option value="claude">Claude (Anthropic)</option>
+      <option value="openai">OpenAI</option>
+    </select>
+
+    <label for="apiKey">API Key</label>
+    <div class="key-input-wrap">
+      <input type="password" id="apiKey" placeholder="Paste your API key" autocomplete="off">
+      <button id="keyToggle" type="button" title="Show/hide key">&#128065;</button>
+    </div>
+
+    <label for="genrePrefs">Genre Preferences</label>
+    <input type="text" id="genrePrefs" placeholder="e.g. hip-hop, funk, house, R&B">
+
+    <label>Dance Mode</label>
+    <div class="dance-mode-group">
+      <button class="dance-mode active" data-mode="match">Match Energy</button>
+      <button class="dance-mode" data-mode="keep">Keep the Vibe</button>
+      <button class="dance-mode" data-mode="escalate">Escalate</button>
+    </div>
+
+    <label class="toggle-label">
+      <input type="checkbox" id="webcamToggle" checked>
+      Show Webcam
+    </label>
+  </aside>
+
+  <!-- Main Content -->
+  <main>
+    <h1>#whatstheviberightnow</h1>
+
+    <div id="webcamContainer">
+      <video id="webcam" autoplay playsinline muted></video>
+    </div>
+    <canvas id="captureCanvas"></canvas>
+
+    <button id="checkVibe">Check Vibe Now</button>
+
+    <div id="status">Press "Check Vibe Now" to start</div>
+
+    <div id="loader" class="hidden">
+      <img src="../loader.gif" alt="Loading...">
+      <span>Reading the room...</span>
+    </div>
+
+    <div id="errorDisplay" class="hidden"></div>
+
+    <div id="vibeDescription" class="hidden"></div>
+
+    <div id="playerContainer" class="hidden"></div>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
